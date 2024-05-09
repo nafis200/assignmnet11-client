@@ -36,11 +36,10 @@ const Navbar = () => {
           </li>
           <li>
             {" "}
-            <Link to="/avatar" className="dropdown dropdown-bottom">
+            <Link to="/avatar" className="">
             <div className="dropdown dropdown-bottom">
             <div tabIndex={0}>Use avatar</div>
-            <ul tabIndex={0} className="dropdown-content z-[1] menu p-4 shadow bg-base-100 rounded-box w-52">
-   
+            <ul tabIndex={0} className="dropdown-content z-[20] menu lg:p-4 lg:ml-0 md:ml-0 ml-16 md:absolute md:left-[60px]  md:top-0 shadow bg-base-100 rounded-box w-52">
             <li><Link to="/my">My attempt assignment</Link></li>
             </ul>
            </div>
@@ -87,12 +86,12 @@ const Navbar = () => {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
+            className="menu menu-sm dropdown-content mt-3 z-[20] p-2 shadow bg-base-100 rounded-box w-52"
           >
             {links}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">daisyUI</a>
+        <img className="h-24 w-24 ml-4" src="https://i.postimg.cc/tCYs3Ygp/302424953-491546976311439-2706882930290413380-n.png" alt="" />
       </div>
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">{links}</ul>
