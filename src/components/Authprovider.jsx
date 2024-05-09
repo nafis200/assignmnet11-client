@@ -1,13 +1,15 @@
 import { createUserWithEmailAndPassword, onAuthStateChanged, signInWithEmailAndPassword,  signOut } from "firebase/auth";
-import auth from "./Firebase.config";
+
 import { createContext, useEffect, useState } from "react";
 import axios from "axios";
+import auth from "../firebase";
 
 
 export const AuthContext = createContext(null)
 
 
 const Authprovider = ({children}) => {
+  
     
     const [users,setUsers] = useState()
     const [loading,setLoading] = useState(true)

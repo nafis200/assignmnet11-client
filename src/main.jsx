@@ -13,11 +13,14 @@ import Registration from './Registration';
 import Mybookings from './components/Mybookings';
 import Authprovider from './components/Authprovider';
 import Privateroute from './components/Privateroute';
+import Assignment from './components/Assignment';
+import Errorelement from './Errorelement';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
+    errorElement:<Errorelement></Errorelement>,
     children:[
         {
            path:'/',
@@ -34,6 +37,10 @@ const router = createBrowserRouter([
         {
            path: '/bookings',
            element: <Privateroute><Mybookings></Mybookings></Privateroute>
+        },
+        {
+           path:'/assignment',
+           element:<Assignment></Assignment>
         }
     ]
   },
