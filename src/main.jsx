@@ -13,8 +13,11 @@ import Registration from './Registration';
 import Mybookings from './components/Mybookings';
 import Authprovider from './components/Authprovider';
 import Privateroute from './components/Privateroute';
-import Assignment from './components/Assignment';
 import Errorelement from './Errorelement';
+import Avatar from './components/Avatar';
+import Create from './components/Create';
+import Pending from './components/Pending';
+import Myassignment from './components/Myassignment';
 
 const router = createBrowserRouter([
   {
@@ -39,19 +42,31 @@ const router = createBrowserRouter([
            element: <Privateroute><Mybookings></Mybookings></Privateroute>
         },
         {
-           path:'/assignment',
-           element:<Assignment></Assignment>
+           path:'/avatar',
+           element:<Avatar></Avatar>,
+        },
+        {
+           path:'/create',
+           element:<Create></Create>,
+        },
+        {
+          path:'/pending',
+          element:<Pending></Pending>
+        },
+        {
+           path:'/my',
+           element:<Myassignment></Myassignment>
         }
+        
     ]
   },
 ]);
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <div className='max-w-7xl container mx-auto'>
    <React.StrictMode>
      <Authprovider>
      <RouterProvider router={router} />
      </Authprovider>
-  </React.StrictMode>,
-  </div>
+  </React.StrictMode>
+
 )
