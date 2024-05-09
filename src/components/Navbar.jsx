@@ -41,7 +41,7 @@ const Navbar = () => {
             <div tabIndex={0}>Use avatar</div>
             <ul tabIndex={0} className="dropdown-content z-[1] menu p-4 shadow bg-base-100 rounded-box w-52">
    
-            <li><Link to="/my">My assignment</Link></li>
+            <li><Link to="/my">My attempt assignment</Link></li>
             </ul>
            </div>
             </Link>{" "}
