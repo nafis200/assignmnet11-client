@@ -25,11 +25,11 @@ const Registration = () => {
     }
     return (
         <div>
-            <p className="text-center text-5xl">I am registration</p>
-            <div className="hero min-h-screen bg-base-200">
+            
+            <div className="hero min-h-screen bg-base-200 bg-[url('https://i.postimg.cc/Y075n05X/1000-F-668433624-HGKul-Uw-Qjae-LV8-Xay-QYy6-F3-RCVQff-TGv.jpg')]">
         <div className="hero-content flex-col lg:flex-row">
           <div className="mr-12 w-1/2">
-           <img src="https://i.ibb.co/T2cpBd5/888.jpg" alt="" />
+           {/* <img src="https://i.ibb.co/T2cpBd5/888.jpg" alt="" /> */}
           </div>
           <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
           <h1 className="text-5xl font-bold text-center mt-5">Sign up!</h1>
