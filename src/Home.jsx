@@ -1,4 +1,5 @@
 import { useLocation } from "react-router";
+import Banner from "./components/Banner";
 
 
 
@@ -7,7 +8,7 @@ const Home = () => {
     console.log(location);
     return (
         <div>
-           <p>hellow world</p> 
+           <Banner></Banner>
         </div>
     );
 };
