@@ -18,6 +18,7 @@ import Avatar from './components/Avatar';
 import Create from './components/Create';
 import Pending from './components/Pending';
 import Myassignment from './components/Myassignment';
+import Assi from './components/Assi';
 
 const router = createBrowserRouter([
   {
@@ -56,6 +57,10 @@ const router = createBrowserRouter([
         {
            path:'/my',
            element:<Myassignment></Myassignment>
+        },
+        {
+           path:'/assi',
+           element:<Assi></Assi>
         }
         
     ]

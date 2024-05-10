@@ -21,8 +21,10 @@ const Navbar = () => {
     <>
       <li>
         {" "}
-        <Link to="/">Assignment</Link>{" "}
+        <Link to="/">Home</Link>{" "}
       </li>
+
+      <li> <Link to="/assi">Assignment</Link> </li>
 
       {users?.email ? (
         <>

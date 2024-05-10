@@ -13,10 +13,13 @@ const Banner = () => {
           <p className="text-center text-red-500 lg:text-red-700 lg:font-bold md:font-bold lg:text-2xl">Online group study is a collaborative learning approach where participants gather virtually to review, discuss, and comprehend academic material together. Through platforms like Zoom or Google Meet, students can share resources, clarify doubts, and reinforce concepts as a cohesive unit</p>
         </div>
         <div className="space-x-4 mt-4 ml-4 flex justify-center lg:flex-1">
-          <button className="btn btn bg-primary">Enroll Now</button>
-          <button className="btn bg-green-400">Join group</button>
+          <button className="btn btn bg-primary text-white">Enroll Now</button>
+          <button className="btn bg-green-400 text-white">Join group</button>
         </div>
         </section>
+        <div className="flex justify-center lg:mt-[80px] md:mt[80px] mt-[40px]">
+            <button className="btn bg-orange-500 text-white">View details</button>
+        </div>
         </div>
        </div>
       </div> 
