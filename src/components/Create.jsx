@@ -1,12 +1,20 @@
 import { useContext } from "react";
 import { AuthContext } from "./Authprovider";
-
+import React, { useState } from "react";
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
 const Create = () => {
+
+    const [startDate, setStartDate] = useState(new Date());
+
     const handleSubmit = e=>{
          e.preventDefault();
          const form = e.target
          const medium = form.difficulty.value 
+         const Dates = form.date.value
          console.log(medium);
+         console.log(startDate);
+         console.log(Dates);
          
     }
   return (
@@ -74,24 +82,18 @@ const Create = () => {
             <label className="label">
               <span className="label-text">Select difficulty</span>
             </label>
-            <select name="difficulty" required>
+            <select className="input lg:input-lg input-bordered lg:w-[500px] md:w-[250px] w-[150px]" name="difficulty" required>
               <option value="easy">Easy</option>
               <option value="medium">Medium</option>
               <option value="hard">Hard</option>
             </select>
           </div>
-          {/* <div className="">
+          <div className="">
             <label className="label">
-              <span className="label-text">average_cost</span>
+              <span className="label-text">Date</span>
             </label>
-            <input
-              type="number"
-              placeholder="average_cost"
-              className="input lg:input-lg input-bordered lg:w-[500px] md:w-[250px] w-[150px]"
-              name="average_cost"
-              required
-            />
-          </div> */}
+            <DatePicker name="date" className="input lg:input-lg input-bordered lg:w-[500px] md:w-[250px] w-[150px]" selected={startDate} onChange={(date) => setStartDate(date)} />
+          </div>
         </div>
         <div className="flex justify-center">
           <input
