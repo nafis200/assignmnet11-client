@@ -1,10 +1,21 @@
 
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { IoIosArrowDropdown } from "react-icons/io";
+import useHost from "./useHost";
+import Assicard from "./Assicard";
 
 const Assi = () => {
-    const [items, setItems] = useState(0);
+    const axiosSecure = useHost()
+    const [items, setItems] = useState([]);
+    const url = `/create`
+   
+    useEffect(()=>{
+     axiosSecure.get(url)
+    .then(res => setItems(res.data))
+    },[])
+   
+
     const Sortfunction = (check) =>{
         let datacard = [...items]
         if(check === "des"){
@@ -33,10 +44,14 @@ const Assi = () => {
             <li>
               <a onClick={()=>Sortfunction('Hard')}>Hard</a>
             </li>
-           
-          </ul>
+            </ul>
         </div>
       </section> 
+      <div className="mt-20 grid lg:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-3 lg:space-y-10 space-y-5 lg:ml-4 md:ml-[200px]" >
+            {
+                items.map((data,index)=> <Assicard data={data}></Assicard> )
+            }
+        </div>
         </div>
     );
 };
