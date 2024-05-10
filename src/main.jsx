@@ -48,15 +48,15 @@ const router = createBrowserRouter([
         },
         {
            path:'/create',
-           element:<Create></Create>,
+           element:<Privateroute><Create></Create></Privateroute> ,
         },
         {
           path:'/pending',
-          element:<Pending></Pending>
+          element:<Privateroute><Pending></Pending></Privateroute>
         },
         {
            path:'/my',
-           element:<Myassignment></Myassignment>
+           element:<Privateroute><Myassignment></Myassignment></Privateroute>,
         },
         {
            path:'/assi',

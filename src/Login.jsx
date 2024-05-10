@@ -6,9 +6,11 @@ import useAuth from "./components/useAuth";
 import useAxiosSecure from "./components/useAxiosSecure";
 import { FaGithub } from "react-icons/fa";
 import { FaGoogle } from "react-icons/fa";
+import { useState } from "react";
 
 const Login = () => {
   // const {signInUser} = useContext(AuthContext)
+  const [errors,setErrors] = useState("")
   const { signInUser, signIngoogle } = useAuth();
   const location = useLocation();
   const navigate = useNavigate();
@@ -25,6 +27,7 @@ const Login = () => {
         const loggedUser = result.user;
         console.log(loggedUser);
         const user = { email };
+        setErrors(' ')
 
         //  axios.post('http://localhost:5008/jwt',user,{withCredentials:true})
 
@@ -38,7 +41,7 @@ const Login = () => {
         //  navigate(location?.state ? location?.state : '/')
       })
       .catch((error) => {
-        console.log(error.message);
+        setErrors("email must be register");
       });
   };
   const handlegoogle = () => {
@@ -107,6 +110,8 @@ const Login = () => {
                   </span>
                   login with google
                 </button>
+
+                <p className="text-center text-red-500">{errors}</p>
               </div>
 
     </div>

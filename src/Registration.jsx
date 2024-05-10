@@ -1,5 +1,7 @@
 import { useContext } from "react";
 import { AuthContext } from "./components/Authprovider";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 
 
@@ -16,9 +18,10 @@ const Registration = () => {
         createUser(email,password)
         .then(result =>{
            console.log(result.user)
+           toast.success("successfully register");
         })
         .catch(error =>{
-          console.log(error.message)
+          toast.error(error.message);
         })
         
         
@@ -60,7 +63,7 @@ const Registration = () => {
           </div>
         </div>
       </div>
-
+      <ToastContainer></ToastContainer>
         </div>
     );
 };
