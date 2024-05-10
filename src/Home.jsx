@@ -1,6 +1,7 @@
 import { useLocation } from "react-router";
 import Banner from "./components/Banner";
 import Feature from "./Feature";
+import Faq from "./Faq";
 
 
 
@@ -11,6 +12,7 @@ const Home = () => {
         <div>
            <Banner></Banner>
            <Feature></Feature>
+           <Faq></Faq>
         </div>
     );
 };
