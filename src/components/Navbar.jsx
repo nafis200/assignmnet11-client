@@ -34,7 +34,7 @@ const Navbar = () => {
           </li>
           <li>
             {" "}
-            <Link className="mt-2" to="/pending">Pending assignment</Link>{" "}
+            <Link className="mt-2" to="/assi1">Pending assignment</Link>{" "}
           </li>
       <li className="mt-2">
         <details>

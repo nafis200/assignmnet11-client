@@ -7,7 +7,8 @@ import useAxiosSecure from "./components/useAxiosSecure";
 import { FaGithub } from "react-icons/fa";
 import { FaGoogle } from "react-icons/fa";
 import { useState } from "react";
-
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 const Login = () => {
   // const {signInUser} = useContext(AuthContext)
   const [errors,setErrors] = useState("")
@@ -41,7 +42,8 @@ const Login = () => {
         //  navigate(location?.state ? location?.state : '/')
       })
       .catch((error) => {
-        setErrors("email must be register");
+        setErrors("email password should be match");
+        toast.error("email password should be match");
       });
   };
   const handlegoogle = () => {
@@ -119,6 +121,7 @@ const Login = () => {
 
           </div>
         </div>
+        <ToastContainer></ToastContainer>
       </div>
     </>
   );

@@ -1,23 +1,38 @@
 import { useLoaderData, useNavigate } from "react-router";
 import { NavLink } from "react-router-dom";
+import useAuth from "./useAuth";
+import useAxiosSecure from "./useAxiosSecure";
+import Swal from "sweetalert2";
 const Viewassi = () => {
+   
+  const axiosSecure = useAxiosSecure()
+
+
   const data = useLoaderData();
   const navigate = useNavigate();
-  const { title, description, marks, image, medium, Dates, email, _id } = data;
+  const { users } = useAuth();
+
+  const { title, description, marks, image, medium, Dates, email} = data;
   const handleSubmut = (e) => {
     e.preventDefault();
 
-    
-
+    const Submittedemail = users?.email
     const form = e.target;
     const pdf = form.link.value
     const box = form.box.value 
-    const status = ""
+    const status = "not completed"
+    const obtainmarks = 'not published'
+    const feedback = "no published"
     const totalvalue = {
- 
-      title, description, marks, image, medium, Dates, email, _id,pdf,box,status   
+      title, description, marks, image, medium, Dates,pdf,box,status,Submittedemail,email,obtainmarks,feedback   
     }
-    console.log(totalvalue);
+    // console.log(totalvalue);
+
+    axiosSecure.post('/item',totalvalue)
+    .then(res=>{
+      console.log(res.data)
+    })
+
     e.target.reset()
   };
   return (
@@ -44,8 +59,9 @@ const Viewassi = () => {
 
         <h2 className="font-bold flex items-center gap-2">
           {" "}
-          prepared By: <span>{email}</span>{" "}
+          prepared By:{" "}
         </h2>
+        <span className="font-bold">{email}</span>
 
         <div className="card-actions mt-2 ">
           <button

@@ -16,11 +16,14 @@ import Privateroute from './components/Privateroute';
 import Errorelement from './Errorelement';
 import Avatar from './components/Avatar';
 import Create from './components/Create';
-import Pending from './components/Pending';
 import Myassignment from './components/Myassignment';
 import Assi from './components/Assi';
 import Updatecard from './components/Updatecard';
 import Viewassi from './components/Viewassi';
+import Assi1 from './components/Assi1';
+import useAxiosSecure from './components/useAxiosSecure';
+import useAuth from './components/useAuth';
+
 
 const router = createBrowserRouter([
   {
@@ -53,10 +56,6 @@ const router = createBrowserRouter([
            element:<Privateroute><Create></Create></Privateroute> ,
         },
         {
-          path:'/pending',
-          element:<Privateroute><Pending></Pending></Privateroute>
-        },
-        {
            path:'/my',
            element:<Privateroute><Myassignment></Myassignment></Privateroute>,
         },
@@ -73,6 +72,10 @@ const router = createBrowserRouter([
           path:'/view/:id',
           element:<Privateroute> <Viewassi></Viewassi> </Privateroute>,
           loader: ({params})=> fetch(`http://localhost:5008/create/${params.id}`)
+        },
+        {
+          path:'/assi1',
+          element:<Privateroute><Assi1></Assi1> </Privateroute>,   
         }
         
     ]
