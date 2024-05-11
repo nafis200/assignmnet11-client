@@ -1,34 +1,45 @@
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import React, { useState } from "react";
+import { useLoaderData } from "react-router";
 
 const Updatecard = () => {
  
- 
+    const data = useLoaderData()
+    const { title,
+        description,
+        marks,
+        image,
+        medium,
+        Dates,
+        email,
+        _id} = data
+        
     const [startDate, setStartDate] = useState(new Date());
 
     return (
-        <div className="hero min-h-screen bg-base-200  bg-[url('https://i.postimg.cc/C1qvq4JS/pexels-photo-949587.jpg')]">
+        <div className="hero min-h-screen bg-base-200  bg-[url('https://i.postimg.cc/dQhJF34k/web-development1.png')]">
        
       <form className="card-body">
         {/* 1st input */}
-        <h2 className="text-2xl text-white text-center">Create assignment</h2>
+        <h2 className="text-2xl text-white text-center">Update assignment</h2>
         <div className="lg:flex md:flex lg:gap-4 gap-2 md:gap-4 justify-center flex">
           <div className="">
             <label className="label">
-              <span className="label-text text-white">title</span>
+              <span className="label-text text-black font-bold">title</span>
             </label>
             <input
               type="text"
               placeholder="Title"
               className="input lg:input-lg input-bordered lg:w-[500px] md:w-[250px] w-[150px]"
+              defaultValue={title}
               name="title"
               required
             />
           </div>
           <div className="">
             <label className="label">
-              <span className="label-text text-white">Description</span>
+              <span className="label-text text-black font-bold">Description</span>
             </label>
             <input
               type="text"
@@ -43,25 +54,27 @@ const Updatecard = () => {
         <div className="lg:flex md:flex lg:gap-4 gap-2 md:gap-4 justify-center flex">
           <div className="">
             <label className="label">
-              <span className="label-text text-white">Marks</span>
+              <span className="label-text text-black font-bold">Marks</span>
             </label>
             <input
               type="text"
               placeholder="marks"
               className="input lg:input-lg input-bordered lg:w-[500px] md:w-[250px] w-[150px]"
               name="marks"
+              defaultValue={marks}
               required
             />
           </div>
           <div className="">
             <label className="label">
-              <span className="label-text text-white">thumbnail Image URL</span>
+              <span className="label-text text-black font-bold">thumbnail Image URL</span>
             </label>
             <input
               type="text"
               placeholder="thumbnail Image URL"
               className="input lg:input-lg input-bordered lg:w-[500px] md:w-[250px] w-[150px]"
               name="thumbnail"
+              defaultValue={image}
               required
             />
           </div>
@@ -70,9 +83,9 @@ const Updatecard = () => {
         <div className="lg:flex md:flex lg:gap-4 gap-2 md:gap-4 justify-center flex">
           <div className="">
             <label className="label">
-              <span className="label-text text-white">Select difficulty</span>
+              <span className="label-text text-black font-bold">Select difficulty</span>
             </label>
-            <select className="input lg:input-lg input-bordered lg:w-[500px] md:w-[250px] w-[150px] " name="difficulty" required>
+            <select className="input lg:input-lg input-bordered lg:w-[500px] md:w-[250px] w-[150px]" value={medium}  name="difficulty" required>
               <option value="easy">Easy</option>
               <option value="medium">Medium</option>
               <option value="hard">Hard</option>
@@ -80,7 +93,7 @@ const Updatecard = () => {
           </div>
           <div className="">
             <label className="label">
-              <span className="label-text text-white">Date</span>
+              <span className="label-text text-black font-bold">Date</span>
             </label>
             <DatePicker name="date" className="input lg:input-lg input-bordered lg:w-[500px] md:w-[250px] w-[150px]" selected={startDate} onChange={(date) => setStartDate(date)} />
           </div>
