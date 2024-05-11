@@ -11,10 +11,12 @@ const Assi1 = () => {
     
     const url = `http://localhost:5008/items?email=${users?.email}`
     useEffect(()=>{
-        fetch(url,{credentials:'include'})
-        .then(res => res.json())
-        .then(data=> setItems(data))
-    },[url])
+        // fetch(url,{credentials:'include'})
+        // .then(res => res.json())
+        // .then(data=> setItems(data))
+        axiosSecure.get(url)
+        .then(res=>setItems(res.data))
+    },[url,axiosSecure])
     return (
         
         <div>
