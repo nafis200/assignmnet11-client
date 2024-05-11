@@ -8,21 +8,28 @@ import Assicard from "./Assicard";
 const Assi = () => {
     const axiosSecure = useHost()
     const [items, setItems] = useState([]);
+    const [store,setStore] =useState([])
     const url = `/create`
    
     useEffect(()=>{
      axiosSecure.get(url)
-    .then(res => setItems(res.data))
+    .then(res => {
+        setItems(res.data
+        )
+        setStore(res.data)
+    })
     },[])
    
 
     const Sortfunction = (check) =>{
-        let datacard = [...items]
-        if(check === "des"){
-            datacard.sort((a,b)=>a.average_cost - b.average_cost)
+        // console.log(typeof(check));
+        // items.map(data=>console.log((data.medium)))
+        if(check == 'all'){
+            setItems(store)
+            return
         }
-        console.log(datacard);
-        setItems(datacard)
+        const newCard = store.filter(data=> data.medium === check)
+        setItems(newCard)
     }
     return (
         <div>
@@ -36,20 +43,23 @@ const Assi = () => {
             className="dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
           >
             <li>
-              <a onClick={()=>Sortfunction('Easy')}>easy</a>
+              <a onClick={()=>Sortfunction('all')}>all</a>
             </li>
             <li>
-              <a onClick={()=>Sortfunction('Medium')}>Medium</a>
+              <a onClick={()=>Sortfunction('easy')}>easy</a>
             </li>
             <li>
-              <a onClick={()=>Sortfunction('Hard')}>Hard</a>
+              <a onClick={()=>Sortfunction('medium')}>Medium</a>
+            </li>
+            <li>
+              <a onClick={()=>Sortfunction('hard')}>Hard</a>
             </li>
             </ul>
         </div>
       </section> 
       <div className="mt-20 grid lg:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-3 lg:space-y-10 space-y-5 lg:ml-4 md:ml-[200px]" >
             {
-                items.map((data,index)=> <Assicard data={data}></Assicard> )
+                items.map((data,index)=> <Assicard data={data} items={items} setItems={setItems}></Assicard> )
             }
         </div>
         </div>
