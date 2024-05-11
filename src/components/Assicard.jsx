@@ -8,7 +8,7 @@ import useHost from "./useHost";
 const Assicard = ({data,items,setItems}) => {
     
     const {users} = useAuth()
-    const loggedinemail = users?.email
+    const loggedinemail = users?.email ? users?.email : 'null'
     const axiosSecure = useHost()
     
    
@@ -88,7 +88,7 @@ const Assicard = ({data,items,setItems}) => {
        <h2 className='font-bold flex items-center gap-2'>  marks <span className='text-red-500'>{marks}</span> </h2>
        <h2 className='font-bold flex items-center gap-2'> <span className="flex items-center gap-2">  <span className="text-orange-400">Difficulty level</span>  </span> {medium}</h2> 
 
-      <NavLink> <button className='btn btn-success'>Update Assignment</button> </NavLink>
+      <NavLink to ={`/updatelist/${_id}`}> <button className='btn btn-success'>Update Assignment</button> </NavLink>
       <NavLink><button onClick={()=>(handleDelete(_id))} className='btn btn-warning'>delete Assignment</button></NavLink>
       <NavLink> <button className='btn btn-primary'>View Assignment</button> </NavLink>
     

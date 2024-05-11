@@ -19,6 +19,7 @@ import Create from './components/Create';
 import Pending from './components/Pending';
 import Myassignment from './components/Myassignment';
 import Assi from './components/Assi';
+import Updatecard from './components/Updatecard';
 
 const router = createBrowserRouter([
   {
@@ -61,6 +62,11 @@ const router = createBrowserRouter([
         {
            path:'/assi',
            element:<Assi></Assi>
+        },
+        {
+          path:'/updatelist/:id',
+          element:<Privateroute> <Updatecard></Updatecard> </Privateroute>,
+          loader: ({params})=> fetch(`http://localhost:5008/create/${params.id}`)
         }
         
     ]
