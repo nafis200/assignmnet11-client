@@ -65,7 +65,7 @@ const router = createBrowserRouter([
         },
         {
           path:'/updatelist/:id',
-          element:<Privateroute> <Updatecard></Updatecard> </Privateroute>,
+          element: <Privateroute><Updatecard></Updatecard></Privateroute>,
           loader: ({params})=> fetch(`http://localhost:5008/create/${params.id}`)
         }
         

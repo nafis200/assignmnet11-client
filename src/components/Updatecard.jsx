@@ -1,13 +1,14 @@
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import React, { useState } from "react";
-import { useLoaderData } from "react-router";
+import { useLoaderData, useNavigate } from "react-router";
 import useAuth from "./useAuth";
 import useHost from "./useHost";
 import Swal from "sweetalert2";
 const Updatecard = () => {
     const axiosSecure = useHost()
     const data = useLoaderData()
+    const navigate = useNavigate()
     const { title,
         description,
         marks,
@@ -26,6 +27,15 @@ const Updatecard = () => {
 
     const updateForm = e =>{
         e.preventDefault();
+        const loggedinemail = users?.email ? users?.email : 'null'
+        if(loggedinemail === 'null'){
+          Swal.fire({
+            icon: "error",
+            title: "Oops...",
+            text: "please login"
+          });
+          return
+         }
         const form = e.target
          const medium = form.difficulty.value 
          const Dates = form.date.value
@@ -43,6 +53,7 @@ const Updatecard = () => {
               Dates,
               email
          }
+
          axiosSecure.put(url,totalValue)
          .then(res=>{
             const data = res.data
@@ -51,6 +62,7 @@ const Updatecard = () => {
                 text: "Your file has been Updated.",
                 icon: "success"
               });
+              navigate('/assi')
          })
         
     }
