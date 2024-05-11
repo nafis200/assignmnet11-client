@@ -6,10 +6,19 @@ const Viewassi = () => {
   const { title, description, marks, image, medium, Dates, email, _id } = data;
   const handleSubmut = (e) => {
     e.preventDefault();
+
+    
+
     const form = e.target;
-    const email = form.email.value;
-    const password = form.pass.value;
-    console.log(email, password);
+    const pdf = form.link.value
+    const box = form.box.value 
+    const status = ""
+    const totalvalue = {
+ 
+      title, description, marks, image, medium, Dates, email, _id,pdf,box,status   
+    }
+    console.log(totalvalue);
+    e.target.reset()
   };
   return (
     <div className="card lg:w-96  w-72 bg-base-100 shadow-xl ml-7 lg:ml-[350px] md:ml-52 xl:ml-[580px]">
@@ -55,18 +64,20 @@ const Viewassi = () => {
                 {/* <p className="py-4">
                   Press ESC key or click the button below to close
                 </p> */}
-                <form>
+                <form onSubmit={handleSubmut}>
                   <input
                     type="text"
                     placeholder="pdf link"
                     className="input input-bordered w-full max-w-xs mt-5"
                     name="link"
+                    required
                   />
                   <br />
                   <textarea
-                    placeholder="Bio"
+                    placeholder="quick note"
                     className="textarea textarea-bordered textarea-sm w-full max-w-xs mt-5"
                     name="box"
+                    required
                   ></textarea>
                   <input
                     type="submit"
