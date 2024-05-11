@@ -8,6 +8,7 @@ const Assi1 = () => {
     const axiosSecure = useAxiosSecure()
     const {users} = useAuth()
     const [items, setItems] = useState([]);
+    // const [filteredItems, setFilteredItems] = useState(items)
     
     const url = `http://localhost:5008/items?email=${users?.email}`
     useEffect(()=>{
@@ -15,8 +16,12 @@ const Assi1 = () => {
         // .then(res => res.json())
         // .then(data=> setItems(data))
         axiosSecure.get(url)
-        .then(res=>setItems(res.data))
+        .then(res=>{
+           const filtered = res.data.filter(item => item.status === 'not completed')
+           setItems(filtered)
+        })
     },[url,axiosSecure])
+    
     return (
         
         <div>
