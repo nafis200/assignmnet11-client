@@ -25,12 +25,27 @@ const Assi1 = () => {
     return (
         
         <div>
-          <h2 className="text-2xl">{items.length}</h2>
-          <div>
-            {
-                items.map(item=> <Assi2 item={item}></Assi2> )
-            }
-          </div>
+          
+
+          <div className="overflow-x-auto">
+  <table className="table table-xs">
+    <thead>
+      <tr>
+        <th></th> 
+        <th>Assisgnment title</th> 
+        <th>Assignment marks</th> 
+        <th>examine name</th> 
+        <th>button</th> 
+      </tr>
+    </thead> 
+     
+     {
+        items.map((item,ind)=><Assi2 item={item} items={items} setItems={setItems} ind={ind}></Assi2> )
+     }
+    
+  </table>
+</div>
+
         </div>
     );
 };

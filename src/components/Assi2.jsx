@@ -1,14 +1,20 @@
 
 
 
-const Assi2 = ({item}) => {
-    const {image,title,description,status} = item
+const Assi2 = ({item,items,setItems,ind}) => {
+    console.log(items);
+    const {image,title,description,status,marks,Submittedemail} = item
     return (
-        <div>
-            <img src={image} alt="" />
-            <h2>{title}</h2>
-            <h2>{description}</h2>
-        </div>
+        <tbody>
+        <tr>
+          <th>{ind + 1}</th> 
+          <td>{title}</td> 
+          <td>{marks}</td> 
+          <td>{Submittedemail}</td> 
+          <td> <button className="btn btn-warning">give mark</button></td> 
+        </tr>
+       
+      </tbody> 
     );
 };
 
