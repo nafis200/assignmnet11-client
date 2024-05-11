@@ -20,6 +20,7 @@ import Pending from './components/Pending';
 import Myassignment from './components/Myassignment';
 import Assi from './components/Assi';
 import Updatecard from './components/Updatecard';
+import Viewassi from './components/Viewassi';
 
 const router = createBrowserRouter([
   {
@@ -66,6 +67,11 @@ const router = createBrowserRouter([
         {
           path:'/updatelist/:id',
           element: <Privateroute><Updatecard></Updatecard></Privateroute>,
+          loader: ({params})=> fetch(`http://localhost:5008/create/${params.id}`)
+        },
+        {
+          path:'/view/:id',
+          element:<Privateroute> <Viewassi></Viewassi> </Privateroute>,
           loader: ({params})=> fetch(`http://localhost:5008/create/${params.id}`)
         }
         

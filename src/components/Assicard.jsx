@@ -91,7 +91,7 @@ const Assicard = ({data,items,setItems}) => {
 
       <NavLink to ={`/updatelist/${_id}`}> <button className='btn btn-success'>Update Assignment</button> </NavLink>
       <NavLink><button onClick={()=>(handleDelete(_id))} className='btn btn-warning'>delete Assignment</button></NavLink>
-      <NavLink> <button className='btn btn-primary'>View Assignment</button> </NavLink>
+      <NavLink to={`/view/${_id}`}> <button className='btn btn-primary'>View Assignment</button> </NavLink>
     
       </div>
       
