@@ -21,46 +21,51 @@ const Navbar = () => {
     <>
       <li>
         {" "}
-        <Link to="/">Home</Link>{" "}
+        <Link className="mt-2" to="/">Home</Link>{" "}
       </li>
 
-      <li> <Link to="/assi">Assignment</Link> </li>
+      <li> <Link className="mt-2" to="/assi">Assignment</Link> </li>
 
       {users?.email ? (
         <>
           <li>
             {" "}
-            <Link to="/create">Create assignment</Link>{" "}
+            <Link className="mt-2" to="/create">Create assignment</Link>{" "}
           </li>
           <li>
             {" "}
-            <Link to="/pending">Pending assignment</Link>{" "}
+            <Link className="mt-2" to="/pending">Pending assignment</Link>{" "}
           </li>
+      <li className="mt-2">
+        <details>
+          <summary className="">
+            user avatar
+          </summary>
+          <ul className="p-2 bg-base-100 rounded-t-none lg:p-8">
+            <Link to="/my"><span className="lg:p-8">My assignment attempt</span></Link>
+            
+          </ul>
+        </details>
+      </li>
           <li>
             {" "}
-            <Link to="/avatar" className="">
-            <div className="dropdown dropdown-bottom">
-            <div tabIndex={0}>Use avatar</div>
-            <ul tabIndex={0} className="dropdown-content z-[20] menu lg:p-4 lg:ml-0 md:ml-0 ml-16 md:absolute md:left-[60px]  md:top-0 shadow bg-base-100 rounded-box w-52">
-            <li><Link to="/my">My attempt assignment</Link></li>
-            </ul>
-           </div>
-            </Link>{" "}
-          </li>
-          <li>
-            {" "}
-            <button onClick={handlelogout}>Log out</button>{" "}
+            <button className="mt-2" onClick={handlelogout}>Log out</button>{" "}
           </li>{" "}
+    
+          
+    
+  
+
         </>
       ) : (
         <>
           {" "}
           <li>
-            <NavLink to="/login">Login</NavLink>
+            <NavLink className="mt-2" to="/login">Login</NavLink>
           </li>{" "}
           <li>
             {" "}
-            <Link to="/registration">Sign Up</Link>{" "}
+            <Link className="mt-2" to="/registration">Sign Up</Link>{" "}
           </li>{" "}
         </>
       )}
