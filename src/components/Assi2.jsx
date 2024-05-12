@@ -9,7 +9,7 @@ const Assi2 = ({item,items,setItems,ind}) => {
     
     const {title, description, marks, image, medium, Dates,pdf,box,Submittedemail,email,obtainmarks,feedback,_id,status} = item
     const [idea,setIdea] = useState(status)
-    // console.log(item);
+    
     const url = `/item/${_id}`
     const handleSubmut = e=>{
         e.preventDefault()

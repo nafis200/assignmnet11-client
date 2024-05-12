@@ -4,7 +4,6 @@ import { useLocation, useNavigate } from "react-router";
 import axios from "axios";
 import useAuth from "./components/useAuth";
 import useAxiosSecure from "./components/useAxiosSecure";
-import { FaGithub } from "react-icons/fa";
 import { FaGoogle } from "react-icons/fa";
 import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
@@ -22,19 +21,15 @@ const Login = () => {
     const form = event.target;
     const email = form.email.value;
     const password = form.password.value;
-    console.log(email, password);
     signInUser(email, password)
       .then((result) => {
         const loggedUser = result.user;
-        console.log(loggedUser);
         const user = { email };
         setErrors(' ')
 
-        //  axios.post('http://localhost:5008/jwt',user,{withCredentials:true})
+        //  axios.post('https://module63-2.vercel.app/jwt',user,{withCredentials:true})
 
         axiosSecure.post("/jwt", user).then((res) => {
-          console.log(res.data, "withcredential axiospost");
-          console.log(res.data.success);
           if (res.data.success) {
             navigate(location?.state ? location?.state : "/");
           }
@@ -49,9 +44,9 @@ const Login = () => {
   const handlegoogle = () => {
     signIngoogle()
       .then((result) => {
-        console.log(result.user);
+       
         const user = result.user
-        console.log(user);
+        
         
         
       })

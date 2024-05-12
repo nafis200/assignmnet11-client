@@ -14,14 +14,14 @@ const Registration = () => {
         const form = event.target;
         const email = form.email.value
         const password = form.password.value
-        console.log(email,password);
+       
         if(password.length < 6){
            toast.error('password should be at least 6 character')
            return
         }
         createUser(email,password)
         .then(result =>{
-           console.log(result.user)
+           
            toast.success("successfully register");
         })
         .catch(error =>{

@@ -41,20 +41,22 @@ const Authprovider = ({children}) => {
 
             const userEmail = currentUser?.email || users?.email
             const loggedUser = {email : userEmail}
-            console.log('observing current user inside useEffect', currentUser);
+            
             setUsers(currentUser)
             setLoading(false)
             if(currentUser){
                 
-                axios.post('http://localhost:5008/jwt', loggedUser,{withCredentials: true})
-                .then(res => console.log(res.data))
+                axios.post('https://module63-2.vercel.app/jwt', loggedUser,{withCredentials: true})
+                .then(res => {
+                    console.log(res.data)
+                })
             }
             else{
-               axios.post('http://localhost:5008/logout',loggedUser,{
+               axios.post('https://module63-2.vercel.app/logout',loggedUser,{
                  withCredentials: true
                })
                .then(res=>{
-                   console.log(res.data)
+        
                })
             }
           })

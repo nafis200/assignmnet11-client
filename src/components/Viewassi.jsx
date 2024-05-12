@@ -26,11 +26,11 @@ const Viewassi = () => {
     const totalvalue = {
       title, description, marks, image, medium, Dates,pdf,box,status,Submittedemail,email,obtainmarks,feedback   
     }
-    // console.log(totalvalue);
+    
 
     axiosSecure.post('/item',totalvalue)
     .then(res=>{
-      console.log(res.data)
+     
     })
 
     e.target.reset()

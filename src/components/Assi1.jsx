@@ -10,7 +10,7 @@ const Assi1 = () => {
     const [items, setItems] = useState([]);
     // const [filteredItems, setFilteredItems] = useState(items)
     
-    const url = `http://localhost:5008/items`
+    const url = `https://module63-2.vercel.app/items`
     useEffect(()=>{
         // fetch(url,{credentials:'include'})
         // .then(res => res.json())

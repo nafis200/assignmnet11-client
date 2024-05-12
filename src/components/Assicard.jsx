@@ -42,7 +42,7 @@ const Assicard = ({data,items,setItems}) => {
                 cancelButtonColor: "#d33",
                 confirmButtonText: "Yes, delete it!"
               }).then((result) => {
-                console.log(result);
+             
                 if (result.isConfirmed) {
                   // fetch(`https://module-57-2.vercel.app/item/${id}`, {
                   //   method: "DELETE"
@@ -50,7 +50,7 @@ const Assicard = ({data,items,setItems}) => {
                   //   .then((res) => res.json())
                   //   .then((data) => {
                   //     const reamining = items.filter((it) => it._id !== id);
-                  //     console.log(reamining);
+                  
                   //     setItems(reamining);
                   //   });
 
@@ -58,7 +58,7 @@ const Assicard = ({data,items,setItems}) => {
                   .then(res=>{
                      const data = res.data 
                      const reamining = items.filter((it) => it._id !== id);
-                      console.log(reamining);
+                     
                       setItems(reamining);
                   })
           

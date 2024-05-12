@@ -7,7 +7,6 @@ import Faq from "./Faq";
 
 const Home = () => {
     const location = useLocation()
-    console.log(location);
     return (
         <div>
            <Banner></Banner>

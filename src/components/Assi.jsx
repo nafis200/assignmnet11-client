@@ -18,7 +18,7 @@ const Assi = () => {
 
   const pages = [...Array(numberofPages).keys()];
 
-  console.log(pages);
+  
 
   const url = `/create`;
 
@@ -30,7 +30,7 @@ const Assi = () => {
   }, []);
 
   useEffect(() => {
-    fetch(`http://localhost:5008/products?page=${currentPage}&size=${itemPerPages}`)
+    fetch(`https://module63-2.vercel.app/products?page=${currentPage}&size=${itemPerPages}`)
         .then(res => res.json())
         .then(data => setItems(data))
 }, [currentPage,itemPerPages]);
@@ -58,8 +58,7 @@ const Assi = () => {
 
 
   const Sortfunction = (check) => {
-    // console.log(typeof(check));
-    // items.map(data=>console.log((data.medium)))
+    
     if (check == "all") {
       setItems(store);
       return;

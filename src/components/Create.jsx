@@ -36,11 +36,11 @@ const Create = () => {
          }
          
 
-         console.log(totalValue); 
+        
          const url = `/create`
          axiosSecure.post(url,totalValue)
          .then(res=>{
-          console.log(res)
+          
           Swal.fire({
             title: "Added!",
             text: "Your file has been Added.",

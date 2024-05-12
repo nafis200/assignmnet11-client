@@ -58,17 +58,17 @@ const router = createBrowserRouter([
         {
            path:'/assi',
            element:<Assi></Assi>,
-           loader:()=>fetch('http://localhost:5008/productsCount')
+           loader:()=>fetch('https://module63-2.vercel.app/productsCount')
         },
         {
           path:'/updatelist/:id',
           element: <Privateroute><Updatecard></Updatecard></Privateroute>,
-          loader: ({params})=> fetch(`http://localhost:5008/create/${params.id}`)
+          loader: ({params})=> fetch(`https://module63-2.vercel.app/create/${params.id}`)
         },
         {
           path:'/view/:id',
           element:<Privateroute> <Viewassi></Viewassi> </Privateroute>,
-          loader: ({params})=> fetch(`http://localhost:5008/create/${params.id}`)
+          loader: ({params})=> fetch(`https://module63-2.vercel.app/create/${params.id}`)
         },
         {
           path:'/assi1',

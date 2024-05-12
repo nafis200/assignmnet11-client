@@ -7,7 +7,7 @@ import useAxiosSecure from "./useAxiosSecure";
 const Mybookings = () => {
     const [bookings,setBookings] = useState([])
     const {users} = useContext(AuthContext)
-    // const url = `http://localhost:5008/item?email=${users?.email}`
+    
 
     
      const url = `/item?email=${users?.email}`
@@ -23,11 +23,11 @@ const Mybookings = () => {
     // useEffect(()=>{
     //     axios.get(url,{withCredentials: true})
     //     .then(res=>{
-    //         console.log(res.data);
+   
     //         setBookings(res.data)
     //     })
     //     .catch(error=>{
-    //         console.log(error)
+    
     //     })
     // },[url])
 

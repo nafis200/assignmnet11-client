@@ -2,7 +2,6 @@
 // import { AuthContext } from "./Authprovider";
 import { Link, NavLink, Navigate } from "react-router-dom";
 import useAuth from "./useAuth";
-import { FaRegLightbulb } from "react-icons/fa6";
 import { useEffect, useState } from "react";
 
 const Navbar = () => {
@@ -33,7 +32,7 @@ const Navbar = () => {
         Navigate("/login");
       })
       .catch((error) => {
-        console.log("logout error meesage", error.message);
+        
       });
   };
   const links = (

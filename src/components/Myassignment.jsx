@@ -11,7 +11,7 @@ const Myassignment = () => {
     const [items, setItems] = useState([]);
     
     
-    const url = `http://localhost:5008/item?email=${users?.email}`
+    const url = `https://module63-2.vercel.app/item?email=${users?.email}`
     useEffect(()=>{
         // fetch(url,{credentials:'include'})
         // .then(res => res.json())
@@ -21,8 +21,7 @@ const Myassignment = () => {
            setItems([...res.data])
         })
     },[url])
-    console.log(items);
-
+   
 
     return (
         <div>
