@@ -9,8 +9,11 @@ const Assi = () => {
     const axiosSecure = useHost()
     const [items, setItems] = useState([]);
     const [store,setStore] =useState([])
+
+    
+
     const url = `/create`
-   
+    
     useEffect(()=>{
      axiosSecure.get(url)
     .then(res => {
@@ -31,6 +34,7 @@ const Assi = () => {
         const newCard = store.filter(data=> data.medium === check)
         setItems(newCard)
     }
+    
     return (
         <div>
             <section className="container mx-auto flex justify-center">

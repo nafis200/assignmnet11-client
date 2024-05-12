@@ -17,6 +17,7 @@ const Navbar = () => {
     setMode(newMode);
     localStorage.setItem('lightmode', newMode);
   }
+  console.log(mode);
 
   const handlelogout = () => {
     logout()
