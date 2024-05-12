@@ -1,9 +1,10 @@
+import { Slide } from 'react-awesome-reveal'
 const Faq = () => {
   return (
     <div>
-      <h2 className="text-2xl text-center mt-8">
+      <Slide direction={'left'}><h2 className="text-2xl text-center mt-8">
         Here give some frequently question answer
-      </h2>
+      </h2></Slide>
      <div className="space-y-4">
      <div className="collapse collapse-arrow bg-base-200 mt-5">
         <input type="radio" name="my-accordion-2" defaultChecked />

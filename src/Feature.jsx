@@ -1,5 +1,5 @@
 import Featurecard from "./Featurecard";
-
+import { Slide } from 'react-awesome-reveal'
 
 const Feature = () => {
 
@@ -45,10 +45,10 @@ const card = [
     
     return (
         <div>
-            <h2 className="text-2xl text-center mt-5 font-bold">
+            <Slide direction={'left'}><h2 className="text-2xl text-center mt-5 font-bold">
                 Features of online Group study assignment
-            </h2>
-            <p className="text-center font-extralight mt-3">The objective of this assignment is to deepen your understanding of environmental sustainability practices and their significance in various sectors. Through collaborative research and discussion, you will explore different aspects of sustainability and its implementation in real-world scenarios.</p>
+            </h2></Slide>
+            <Slide direction={'right'}>            <p className="text-center font-extralight mt-3">The objective of this assignment is to deepen your understanding of environmental sustainability practices and their significance in various sectors. Through collaborative research and discussion, you will explore different aspects of sustainability and its implementation in real-world scenarios.</p></Slide>
             <div className="mt-20 grid lg:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-3 lg:space-y-10 space-y-5 lg:ml-4 md:ml-[200px]">
             {
                 card.map(data => <Featurecard data={data}></Featurecard> )
