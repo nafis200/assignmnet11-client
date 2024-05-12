@@ -1,8 +1,21 @@
-# React + Vite
+# Online Group-Study assignment
+# Assignment_ID: assignment_category_0001
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+- live-link-url [@https://assignment-11-3c42f.web.app/]
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+# Feature
+
+- authentication base web site
+- jwt
+- pagination
+- mongoDb database 
+- react,nodejs,express js,html,css,tailwind css,daisyui,dom,js
+
+# characteristic
+- you cant enter private route without login
+- implement jwt in private route
+- includes Crud operation 
+- apply pagination
+- sumbit delete update assignment
