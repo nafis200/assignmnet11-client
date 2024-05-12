@@ -2,11 +2,21 @@
 // import { AuthContext } from "./Authprovider";
 import { Link, NavLink, Navigate } from "react-router-dom";
 import useAuth from "./useAuth";
+import { FaRegLightbulb } from "react-icons/fa6";
+import { useState } from "react";
 
 const Navbar = () => {
   // const{users,logout} = useContext(AuthContext)
 
   const { users, logout } = useAuth();
+  const [mode,setMode] = useState(() => localStorage.getItem('lightmode') || 'light')
+
+  const handlechange = () =>{
+    const oldmode = localStorage.getItem('lightmode')
+    const newMode = mode === 'light' ? 'dark' : 'light';
+    setMode(newMode);
+    localStorage.setItem('lightmode', newMode);
+  }
 
   const handlelogout = () => {
     logout()
@@ -19,6 +29,7 @@ const Navbar = () => {
   };
   const links = (
     <>
+     <li> <input type="checkbox" onClick={handlechange} className="toggle toggle-success toggle-md mt-4 mr-2" /> </li>
       <li>
         {" "}
         <Link className="mt-2" to="/">Home</Link>{" "}
@@ -51,11 +62,6 @@ const Navbar = () => {
             {" "}
             <button className="mt-2" onClick={handlelogout}>Log out</button>{" "}
           </li>{" "}
-    
-          
-    
-  
-
         </>
       ) : (
         <>
