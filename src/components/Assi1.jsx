@@ -10,7 +10,7 @@ const Assi1 = () => {
     const [items, setItems] = useState([]);
     // const [filteredItems, setFilteredItems] = useState(items)
     
-    const url = `http://localhost:5008/items?email=${users?.email}`
+    const url = `http://localhost:5008/items`
     useEffect(()=>{
         // fetch(url,{credentials:'include'})
         // .then(res => res.json())
@@ -18,10 +18,10 @@ const Assi1 = () => {
         axiosSecure.get(url)
         .then(res=>{
            const filtered = res.data.filter(item => item.status === 'not completed')
-           setItems(filtered)
+           setItems([...filtered])
+           
         })
-    },[url,axiosSecure])
-    
+    },[])
     return (
         
         <div>
@@ -40,7 +40,7 @@ const Assi1 = () => {
     </thead> 
      
      {
-        items.map((item,ind)=><Assi2 item={item} items={items} setItems={setItems} ind={ind}></Assi2> )
+        items.map((item,ind)=><Assi2 item={item} key={item._id}  items={items} setItems={setItems} ind={ind}></Assi2> )
      }
     
   </table>

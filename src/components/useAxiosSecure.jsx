@@ -16,8 +16,7 @@ const useAxiosSecure = () => {
 
     useEffect( () =>{
  
-        
-        axiosSecure.interceptors.response.use(res=> {
+         axiosSecure.interceptors.response.use(res=> {
             
             return res
         },
@@ -26,13 +25,13 @@ const useAxiosSecure = () => {
              console.log(error.response,'error response')
              if(error.response.status === 401 || error.response.status === 403){
                 console.log('logout the user')
-                logout()
-                .then(()=>{
-                     navigate('/login')
-                })
-                .catch(error => {
-                    console.log(error)
-                })
+               //  logout()
+               //  .then(()=>{
+               //       navigate('/login')
+               //  })
+               //  .catch(error => {
+               //      console.log(error)
+               //  })
              }
         }
     
