@@ -35,20 +35,20 @@ const Assi = () => {
         .then(data => setItems(data))
 }, [currentPage,itemPerPages]);
 
-  const handleItemsperpage = e =>{
+  const handleItemsperpages = e =>{
        
         const val = parseInt(e.target.value)
         setItemPerPages(val)
         setCurrentPage(0)
     }
 
-    const handlePrev = e =>{
+    const handlePrevs = e =>{
             if(currentPage > 0){
               setCurrentPage(currentPage - 1)
             }
       }
       
-      const handleNext = ()=>{
+      const handleNexts = ()=>{
            if(currentPage <pages.length - 1){
             setCurrentPage(currentPage + 1)
            }
@@ -109,18 +109,18 @@ const Assi = () => {
 
       <section className="text-center">
         <p className="mt-8">Current Page: {currentPage}</p>
-        <button onClick={handlePrev} className="btn mt-4">Prev</button>
+        <button onClick={handlePrevs} className="btn mt-4">Prev</button>
         {pages.map((page) => (
           <button
             onClick={() => setCurrentPage(page)}
-            className={currentPage === page && "bg-orange-400 btn"}
+            className={currentPage === page && "bg-blue-400 btn"}
           >
             {page}
           </button>
         ))}
-        <button onClick={handleNext} className="btn">Next</button>
+        <button onClick={handleNexts} className="btn">Next</button>
 
-        <select value={itemPerPages} onChange={handleItemsperpage} name="" id="">
+        <select value={itemPerPages} onChange={handleItemsperpages} name="" id="">
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
