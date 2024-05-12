@@ -1,14 +1,28 @@
+
+import { useEffect } from 'react';
+import Iframe from 'react-iframe'
+
 const Myassigmentcard = ({ data }) => {
     const {title, description, marks, image, medium, Dates,pdf,box,Submittedemail,email,obtainmarks,feedback,_id,status} = data
   return (
     <>
       <div className="card lg:w-96 md:w-96 w-72 bg-base-100 shadow-xl ml-7">
         <figure>
-          <img
+          {/* <img
             className="w-[300px] lg:w-full md:w-full"
             src={image}
             alt="Shoes"
-          />
+          /> */}
+
+<Iframe url={pdf}
+        width="350px"
+        height="350px"
+        id=""
+        className=""
+        display="block"
+        position="relative"/>
+          
+
         </figure>
         <div className="card-body">
           <h2 className="card-title mt-9">
