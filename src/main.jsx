@@ -61,7 +61,8 @@ const router = createBrowserRouter([
         },
         {
            path:'/assi',
-           element:<Assi></Assi>
+           element:<Assi></Assi>,
+           loader:()=>fetch('http://localhost:5008/productsCount')
         },
         {
           path:'/updatelist/:id',
