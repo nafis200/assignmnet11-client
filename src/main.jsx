@@ -21,10 +21,6 @@ import Assi from './components/Assi';
 import Updatecard from './components/Updatecard';
 import Viewassi from './components/Viewassi';
 import Assi1 from './components/Assi1';
-import useAxiosSecure from './components/useAxiosSecure';
-import useAuth from './components/useAuth';
-
-
 const router = createBrowserRouter([
   {
     path: "/",
