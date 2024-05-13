@@ -3,6 +3,7 @@ import { AuthContext } from "./components/Authprovider";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { updateProfile } from "firebase/auth";
+import { NavLink } from "react-router-dom";
 
 
 const Registration = () => {
@@ -101,6 +102,7 @@ const Registration = () => {
               <div className="form-control mt-6">
                 <button className="btn btn-primary">Sign up</button>
               </div>
+              <div className="flex justify-end text-red-600 underline"> <NavLink to="/login">Login</NavLink> </div>
             </form>
           </div>
         </div>

@@ -8,6 +8,7 @@ import { FaGoogle } from "react-icons/fa";
 import { useState } from "react";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { NavLink } from "react-router-dom";
 const Login = () => {
   // const {signInUser} = useContext(AuthContext)
   const [errors,setErrors] = useState("")
@@ -53,7 +54,6 @@ const Login = () => {
   };
   return (
     <>
-     
       <div className="hero min-h-screen bg-base-200  bg-[url('https://i.postimg.cc/mkGsv8Hy/1000-F-767620795-dc-VEg9-TKd-QQ3-PO8km54pc-A5-C1pd-K87l-U.jpg')] ">
         <div className="hero-content flex-col lg:flex-row">
           {<div className="mr-12 w-1/2">
@@ -94,6 +94,9 @@ const Login = () => {
               <div className="form-control mt-6">
                 <button className="btn btn-primary">Login</button>
               </div>
+              <div className="flex justify-end text-blue-600 underline">
+                <NavLink to="/registration">Register</NavLink>
+              </div>
             </form>
             
             <div className="space-y-2 mb-5 ml-4">
@@ -103,7 +106,7 @@ const Login = () => {
                   className="btn  font-bold bg-slate-300 w-3/4 ml-7"
                 >
                   <span> 
-                    <FaGoogle className="text-2xl"></FaGoogle>{" "}
+                    <FaGoogle className="text-2xl"></FaGoogle>
                   </span>
                   login with google
                 </button>
