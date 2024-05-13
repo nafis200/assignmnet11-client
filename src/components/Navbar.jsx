@@ -4,10 +4,35 @@ import { Link, NavLink, Navigate } from "react-router-dom";
 import useAuth from "./useAuth";
 import { useEffect, useState } from "react";
 
-const Navbar = () => {
-  // const{users,logout} = useContext(AuthContext)
 
+const Navbar = () => {
+  
   const { users, logout } = useAuth();
+
+  let names = "unknown";
+  let images = "https://i.postimg.cc/0N2Fs1LG/photo-2024-04-10-15-50-24.jpg";
+
+  let names1 = "";
+  let images1 = "";
+  if (users) {
+    const { displayName, photoURL } = users;
+    console.log(displayName, photoURL);
+    if (displayName) {
+      names1 = displayName;
+    }
+    if (photoURL) {
+      images1 = photoURL;
+    }
+  }
+  if (names1) {
+    names = names1;
+  }
+  if (images1) {
+    images = images1;
+  }
+
+
+
   const [mode, setMode] = useState(
     localStorage.getItem("lightmode") ? localStorage.getItem("lightmode") : "light"
   );
@@ -75,7 +100,15 @@ const Navbar = () => {
           </li>
           <li className="mt-2">
             <details>
-              <summary className="">user avatar</summary>
+             <summary>
+             <div className=" w-10 h-10  ml-0 rounded-full " id="image">
+                    <img
+                      className=" mt-0 rounded-full ml-1"
+                      alt="Tailwind CSS Navbar component"
+                      src={images}
+                    />
+                  </div>
+             </summary>
               <ul className="p-2 bg-base-100 rounded-t-none lg:p-8">
                 <Link to="/my">
                   <span className="lg:p-8">My assignment attempt</span>

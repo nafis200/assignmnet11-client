@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { AuthContext } from "./components/Authprovider";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
+import { updateProfile } from "firebase/auth";
 
 
 const Registration = () => {
@@ -14,6 +14,10 @@ const Registration = () => {
         const form = event.target;
         const email = form.email.value
         const password = form.password.value
+        const name = form.name.value
+        const image = form.image.value 
+
+        
        
         if(password.length < 6){
            toast.error('password should be at least 6 character')
@@ -21,7 +25,17 @@ const Registration = () => {
         }
         createUser(email,password)
         .then(result =>{
-           
+          updateProfile(result.user,{
+            displayName:name,
+            photoURL: image
+         })
+         .then(()=>{
+             console.log('profile update')
+             location.reload()
+         })
+         .catch(()=>{
+              console.log('error occurs')
+         })
            toast.success("successfully register");
         })
         .catch(error =>{
@@ -41,6 +55,30 @@ const Registration = () => {
           <div className="card shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
           <h1 className="text-5xl font-bold text-center mt-5">Sign up!</h1>
             <form onSubmit={handleLogin} className="card-body">
+            <div className="form-control">
+                <label className="label">
+                  <span className="label-text">name</span>
+                </label>
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="name"
+                  className="input input-bordered"
+                  required
+                />
+              </div>
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">imageLink</span>
+                </label>
+                <input
+                  type="text"
+                  placeholder="imageurl"
+                  name="image"
+                  className="input input-bordered"
+                  required
+                />
+              </div>
               <div className="form-control">
                 <label className="label">
                   <span className="label-text">Email</span>
@@ -61,7 +99,7 @@ const Registration = () => {
                 </label>
               </div>
               <div className="form-control mt-6">
-                <button className="btn btn-primary">Login</button>
+                <button className="btn btn-primary">Sign up</button>
               </div>
             </form>
           </div>
