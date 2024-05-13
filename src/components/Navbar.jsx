@@ -98,7 +98,7 @@ const Navbar = () => {
               Pending assignment
             </Link>{" "}
           </li>
-          <li className="mt-2">
+          <li className="mt-1">
             <details>
              <summary>
              <div className=" w-10 h-10  ml-0 rounded-full " id="image">
