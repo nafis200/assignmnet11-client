@@ -50,6 +50,9 @@ const Authprovider = ({children}) => {
                 .then(res => {
                     console.log(res.data)
                 })
+              
+                
+
             }
             else{
                axios.post('https://module63-2.vercel.app/logout',loggedUser,{
@@ -58,6 +61,7 @@ const Authprovider = ({children}) => {
                .then(res=>{
         
                })
+           
             }
           })
           return ()=>{

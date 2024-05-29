@@ -1,9 +1,11 @@
 
 import { useEffect } from 'react';
 import Iframe from 'react-iframe'
+import { Link } from 'react-router-dom';
 
 const Myassigmentcard = ({ data }) => {
     const {title, description, marks, image, medium, Dates,pdf,box,Submittedemail,email,obtainmarks,feedback,_id,status} = data
+    
   return (
     <>
       <div className="card lg:w-96 md:w-96 w-72 bg-base-100 shadow-xl ml-7">
@@ -45,6 +47,9 @@ const Myassigmentcard = ({ data }) => {
           </h2>
           <span className="text-blue-500 text-center">{feedback}</span>
         </div>
+        {
+           feedback !=='no published' && <Link to={`/recheck/${_id}`}><button className='btn btn-primary w-full'>Recheck</button></Link>
+        }
       </div>
     </>
   );

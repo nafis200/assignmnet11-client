@@ -52,6 +52,10 @@ const Login = () => {
         
       })
   };
+
+ 
+
+
   return (
     <>
       <div className="hero min-h-screen bg-base-200  bg-[url('https://i.postimg.cc/mkGsv8Hy/1000-F-767620795-dc-VEg9-TKd-QQ3-PO8km54pc-A5-C1pd-K87l-U.jpg')] ">
@@ -85,6 +89,7 @@ const Login = () => {
                   name="password"
                   required
                 />
+                
                 <label className="label">
                   <a href="#" className="label-text-alt link link-hover">
                     Forgot password?

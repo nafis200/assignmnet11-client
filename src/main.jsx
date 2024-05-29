@@ -21,6 +21,7 @@ import Assi from './components/Assi';
 import Updatecard from './components/Updatecard';
 import Viewassi from './components/Viewassi';
 import Assi1 from './components/Assi1';
+import Recheck from './components/Recheck';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -73,6 +74,11 @@ const router = createBrowserRouter([
         {
           path:'/assi1',
           element:<Privateroute><Assi1></Assi1> </Privateroute>,   
+        },
+        {
+          path:'/recheck/:id',
+          element:<Recheck></Recheck>,
+          loader: ({params})=> fetch(`https://module63-2.vercel.app/create/${params.id}`)
         }
         
     ]
